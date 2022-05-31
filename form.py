@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -40,4 +39,3 @@ def gfg():
 
 if __name__=='__main__':
    app.run()
-=======
