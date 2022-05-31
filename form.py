@@ -10,18 +10,18 @@ def gfg():
         import numpy as np
 
         dataset = pd.read_csv("ageandheight.csv")
-        x = dataset['Age'].values
-        y = dataset['Height'].values
+        x = dataset.iloc[:, 0]
+        y = dataset.iloc[:, 1]
 
         from sklearn.preprocessing import PolynomialFeatures
-        x = x.reshape(-1, 1)
-        poly = PolynomialFeatures(degree=1)
+        x = x.values.reshape(-1, 1)
+        poly = PolynomialFeatures(degree=0)
         X_poly = poly.fit_transform(x)
-        poly.fit(X_poly, y)
+        poly.fit(X_poly,y)
     
         from sklearn.linear_model import LinearRegression
         regressor = LinearRegression()
-        regressor.fit(X_poly, y)
+        regressor.fit(X_poly,y)
 
         y_pred = regressor.predict(X_poly)
 
